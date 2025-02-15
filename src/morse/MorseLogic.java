@@ -38,7 +38,6 @@ public class MorseLogic {
         morseMap.put('Y', "-.--");
         morseMap.put('Z', "--..");
 
-        // Genererar den omvända hashmappen för att möjliggöra konvertering från Morse-kod till text
         generateReverseHashMap();
     }
 
