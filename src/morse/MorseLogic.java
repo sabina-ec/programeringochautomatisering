@@ -48,19 +48,19 @@ public class MorseLogic {
      * @return Morse-kod som en sträng, eller felmeddelande om ogiltiga tecken används
      */
     public static String toMorse(String text) {
-        if (text.isEmpty()) {                                // Kontrollerar om inmatningen är tom
+        if (text.isEmpty()) {                                 // Kontrollerar om inmatningen är tom
             return "Fel: Ingen text angiven. Försök igen.";  // Returnerar felmeddelande om inmatningen är tom
         }
 
         StringBuilder morseBuilder = new StringBuilder();    // Skapar en StringBuilder för att bygga Morse-koden
 
-        for (int i = 0; i < text.length(); i++) {            // Loopar igenom varje tecken i texten
-            char upperKey = Character.toUpperCase(text.charAt(i)); // Omvandlar tecknet till versaler (A-Z)
-            if (morseMap.containsKey(upperKey)) {             // Kontrollerar om tecknet finns i morseMap
-                var value = morseMap.get(upperKey);          // Hämtar motsvarande Morse-kod
-                morseBuilder.append(value).append(" ");      // Lägger till Morse-koden och ett mellanslag
-            } else {                                         // Om tecknet inte finns i morseMap
-                return "Fel: Okänd symbol - " + upperKey;    // Returnerar felmeddelande
+        for (int i = 0; i < text.length(); i++) {                        // Loopar igenom varje tecken i texten
+            char upperKey = Character.toUpperCase(text.charAt(i));      // Omvandlar tecknet till versaler (A-Z)
+            if (morseMap.containsKey(upperKey)) {                      // Kontrollerar om tecknet finns i morseMap
+                var value = morseMap.get(upperKey);                   // Hämtar motsvarande Morse-kod
+                morseBuilder.append(value).append(" ");              // Lägger till Morse-koden och ett mellanslag
+            } else {                                                // Om tecknet inte finns i morseMap
+                return "Fel: Okänd symbol - " + upperKey;          // Returnerar felmeddelande
             }
         }
 
@@ -73,12 +73,12 @@ public class MorseLogic {
      * @return Den översatta texten, eller felmeddelande vid ogiltig inmatning
      */
     public static String fromMorse(String morse) {
-        if (morse.isEmpty()) {                              // Kontrollerar om inmatningen är tom
+        if (morse.isEmpty()) {                                     // Kontrollerar om inmatningen är tom
             return "Fel: Ingen Morse-kod angiven. Försök igen.";  // Returnerar felmeddelande om inmatningen är tom
         }
 
         StringBuilder textBuilder = new StringBuilder();    // Skapar en StringBuilder för att bygga texten
-        String[] morseCodes = morse.split(" ");             // Delar upp Morse-koden i separata tecken med mellanslag som avgränsare
+        String[] morseCodes = morse.split(" ");      // Delar upp Morse-koden i separata tecken med mellanslag som avgränsare
 
         for (String code : morseCodes) {                    // Loopar igenom varje Morse-tecken
             if (reverseMorseMap.containsKey(code)) {        // Kontrollerar om Morse-koden finns i reverseMorseMap
