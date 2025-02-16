@@ -78,7 +78,7 @@ public class MorseLogic {
         }
 
         StringBuilder textBuilder = new StringBuilder();    // Skapar en StringBuilder för att bygga texten
-        String[] morseCodes = morse.split(" ");      // Delar upp Morse-koden i separata tecken med mellanslag som avgränsare
+        String[] morseCodes = morse.split(" ");             // Delar upp Morse-koden i separata tecken med mellanslag som avgränsare
 
         for (String code : morseCodes) {                    // Loopar igenom varje Morse-tecken
             if (reverseMorseMap.containsKey(code)) {        // Kontrollerar om Morse-koden finns i reverseMorseMap
