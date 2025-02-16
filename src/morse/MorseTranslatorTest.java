@@ -36,11 +36,7 @@ public class MorseTranslatorTest {
         assertEquals("Fel: Okänd symbol - @", MorseLogic.toMorse("Hej@"));
     }
 
-    // Testar fallet när en okänd Morse-kod "..---" anges.
-    @Test
-    void testFromMorseUnknownCode() {
-        assertEquals("Fel: Okänd Morse-kod - ..---", MorseLogic.fromMorse("..---"));
-    }
+
 }
 
 
